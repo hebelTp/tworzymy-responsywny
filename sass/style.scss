@@ -1,0 +1,417 @@
+/*global*/
+*, *::before, *::after {
+    box-sizing: border-box;   
+}
+
+$font-text: 'Inconsolata', monospace;
+$font-header: 'Inconsolata', monospace;
+$color-main: #0984e3;
+$color-light:#fff;
+$transition: all 1s;
+
+body {
+    margin: 0;
+    background: $color-light;
+    color: #2c2c54;
+    font-size: 16px;
+    font-family: $font-text;
+}
+
+.container {
+    /*padding: 0 20px;*/
+    margin: auto;
+    max-width: 1000px
+}   
+
+section {
+    margin: 96px auto 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    margin: 24px auto 0 auto;
+    padding: 16px;
+    border-radius: 5px;
+    font-family: $font-text;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    background-position: 100% 0;    /* chowanie gradientu */
+    background-size: 300%;          /* chowanie gradientu */
+}
+
+.btn-one {
+    border-color: #fff;
+    color: #fff;
+    background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+}
+
+.btn-two {
+    border-color: #33d9b2;
+    color: #33d9b2;
+}
+
+.btn-three {
+    border-color: #d63031;
+    color: #d63031;
+}
+
+.btn-four {
+    border-color: $color-main;
+    color: $color-main;
+}
+
+.btn-five {
+    border: none;
+    margin: 36px 0;
+    padding: 0;
+    text-align: left;
+    color: $color-main;    
+}
+
+.btn-one:hover {
+    background-position: 0 100%;
+    color: #ffff;
+    transition: $transition;
+}
+
+.btn-one:hover {
+    color: $color-main;
+}
+
+.box-number {
+    font-size: 60px;
+}
+
+.btn-five:hover {
+    color:#d63031;
+}
+
+.box-our-services .box {
+    flex: 0 0 33.33%;
+    padding:  20px;
+}
+
+.box-our-work .box {
+    flex: 0 0 50%;
+    
+}
+
+.container h1 {
+    font-size: 48px;
+    margin: 0 96px 0 20px;
+}
+
+.box p {
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+/*    z-index: 1; */
+    
+}
+
+/* splash */
+
+.section {
+    position: relative;    
+}
+
+    /* navigation */
+    /* ostylowanie nawigacji pierwszego poziomu */
+
+.navigation {
+    background: $color-main;
+    padding: 12px 0;
+}
+
+.navigation ul {                /* usuniecie wypunktowania */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;                           
+}
+
+.navigation ul ul {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute ;
+    z-index : 1 ;
+}
+
+.navigation li {
+    display: inline-block;      
+    margin-right: 36px;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: $color-light;
+}
+
+.navigation a:hover {
+    color: #33d9b2;    
+}
+    
+.navigation ul ul li {              /* rozwijanie nawigacji 2 poziomu */
+    display: block;
+    display: none;
+    position: absolute;
+    background: $color-light;
+    padding-top: 12px;
+}
+
+.navigation  li:hover li {
+    display: block;
+    position: relative;
+    background: $color-light;
+    li {
+    position: absolute;
+
+    }
+}
+    
+.navigation ul li li a {
+    color: $color-main;
+    display: block;
+    padding: 0 24px;
+}
+
+    /* splash */
+
+.splash {
+    background: $color-main;
+    color: $color-light;
+    min-height: 500px;
+    display: flex;
+}
+
+.splash-inner {
+    margin: auto;
+    max-width: 70%;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 72px;
+    word-spacing: -24px;
+    font-weight: 400; 
+    line-height: 1.2; 
+}
+
+.page-subtitle {
+    margin: 24px 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.page-title span {
+    font-weight: bold;
+}
+
+    /* our services */
+
+.box-our-services, .box-our-work, .box-contact-us {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box-our-services p:first-of-type {
+    font-weight: 700;
+}
+
+.box-our-services .box {
+    position: relative;
+}
+
+.box-number {
+    position: absolute;
+    opacity: 0.5;
+    top: -227px;
+    font-size: 152px;
+    color: #33d9b2;
+}
+
+/*our work*/
+
+
+
+.box-our-work p:last-of-type {
+    font-weight: 700   
+}
+
+.box-our-work .box {
+    min-height: 300px;
+    padding: 20px;
+    margin: 0 0 96px 0;
+}
+
+.img-box {
+    max-width: 250px;
+    max-height: 250px;
+    min-height: 64%;
+    float: left;
+    margin: 20px;
+    width: 250px;
+    object-fit: cover;
+    position: relative;
+}
+
+.img-box-transparent {
+    position: relative;
+    width: 300px;
+    height: 100%;
+    float: left;
+}  
+
+.img-box-transparent::after {
+    opacity: 0.3;    
+    content: '';
+    width: 84%;
+    height: 64%;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    background: $color-main;
+}
+
+
+
+    /*contact us */
+
+.box-contact-us .form  {
+    flex: 2 0 0;
+    padding:  20px 96px 20px 20px;
+}
+
+.box-contact-us .contact {
+    flex: 1 0 0;
+    padding: 20px;
+}
+
+.contact-us {
+    background: $color-main;
+    color: $color-light;
+    min-height: 500px;
+}
+
+.contact-us h1  {
+    padding: 20px 0 0 0;
+    margin: 0 0 0 20px;
+}
+ 
+.box-contact-us .box-8 {
+    flex: 2 0 0;
+}
+ 
+.box-contact-us .box-9 {
+    flex: 1 0 0;
+}
+
+.box-9 h2 {
+    font-size: 20px;
+}
+
+.box-contact-us .box-8 {
+    display: flex;
+    flex-flow: column nowrap;
+   	justify-content: space-around;
+	min-width: 250px;
+    background: #0984e3;
+	padding: 30px;
+	text-align: left;
+	height: 400px;
+	box-shadow: none;
+	font-family: $font-text; 
+}
+
+input, textarea {
+    background: #0984e3;
+    border-color: $color-light;
+    border-bottom: 3px solid white ;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font: $font-text;
+    color: $color-light;
+}
+
+input::placeholder {
+    font: $font-text;
+    color: $color-light;
+}
+  
+  /* footer */
+footer {
+    text-align: center;
+ }
+ 
+.container i {
+    text-align: center;
+    font-size: 30px;               
+    background: #d63031;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: $color-light;
+    border-radius: 50%;   
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.container li {
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none
+}
+
+    /* media */
+    
+@media (min-width: 320px) and (max-width: 1024px) {
+
+    .box-our-services, .box-our-work, .box-contact-us {
+        flex-direction: column;
+    }
+
+    .img-box {
+        max-height: 175px;
+    }    
+    .img-box-transparent::after {
+    width: 85%;
+    height: 85%;
+    }
+
+    .box-our-work .box {
+    margin: 0 0 0px 0;
+    }
+    
+    .box-contact-us .box{
+    width: 100%;
+    padding: 30px;
+    }
+    
+    .page-title {
+    font-size: 40px;
+    }
+    
+    /*.box-our-work {
+    padding: 35px;
+    } */
+    
+    .navigation {
+    padding: 12px 35px;
+    }
+    .p-image {
+        position: relative;
+        height: 200px;
+    }
+    
+    
+}
